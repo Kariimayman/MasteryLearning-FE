@@ -1,15 +1,13 @@
 import React from 'react';
-
 interface CardProps {
     imageUrl: string;
     title: string;
     price: number;
     onClick?: () => void; // Optional function for button click
 }
-
 const CourseCard: React.FC<CardProps> = ({ imageUrl, title, price, onClick }) => {
     return (
-        <div className="w-full p-4 rounded overflow-hidden shadow-md ">
+        <div className="w-full p-4 rounded overflow-hidden shadow-md cursor-pointer" onClick={() => (location.href = "/Course")}> 
             <img className="w-full h-48 object-cover" src={imageUrl} alt={title} />
             <div className="mt-6">
                 <h2 className="text-xl font-bold text-black py-2">{title}</h2>
