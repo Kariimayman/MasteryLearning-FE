@@ -1,10 +1,13 @@
-import Navbar from "@/components/navbar";
+"use client"; // This is a client component 👈🏽
 
-export default function ProgramsPage() {
+import ProgramsPage from "../pages/programspage";
+import { RecoilRoot, useRecoilState } from "recoil";
+
+export default function Programs() {
+
     return (
-        <div className="max-w-full">
-            <Navbar />
-        </div>
-
+        <RecoilRoot>
+            <ProgramsPage />
+        </RecoilRoot>
     );
 }

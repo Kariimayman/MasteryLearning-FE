@@ -1,10 +1,12 @@
-import Navbar from "@/components/navbar";
+"use client"; // This is a client component 👈🏽
+import PaymentMethodsPage from "../pages/paymentmethodspage";
+import { RecoilRoot } from "recoil";
 
-export default function ProgramsPage() {
+export default function PaymentMethods() {
     return (
-        <div className="max-w-full">
-            <Navbar />
-        </div>
+        <RecoilRoot>
+            <PaymentMethodsPage />
+        </RecoilRoot>
 
     );
 }

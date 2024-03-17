@@ -5,10 +5,7 @@ import logo from '../images/Logo-1.png'
 import { usePathname } from 'next/navigation'
 
 const NavItem = ({ text, location }: any) => {
-  var isActive = false
-  if (usePathname() == location) {
-    isActive = true
-  }
+  const isActive = usePathname() === location; // Direct comparison
   return (
     <Link href={location} className={`grow sm:text-l md:text-xl lg:text-3xl text-center hover:text-green-500 font-sans  ${isActive ? 'text-green-500' : ''} transition-colors`}>
       {text}
@@ -18,12 +15,6 @@ const NavItem = ({ text, location }: any) => {
 
 
 function NavigationBar() {
-
-  const handleClick = (text: any) => () => {
-    console.log(`${text} clicked`);
-  };
-
-
   const navigationItems = [
     { text: "طرق الدفع", location: "/PaymentMethods" },
     { text: "الشهادات", location: "/Certificates" },
@@ -45,7 +36,7 @@ function NavigationBar() {
         </div>
         <div className="flex gap-3  justify-center items-center my-auto  text-zinc-500 max-md:flex-wrap max-md:max-w-full flex-grow -mr-20 px-20">
           {navigationItems.map((item, index) => (
-            <NavItem key={index} text={item.text} location={item.location} onClick={() => handleClick} />
+            <NavItem key={index} text={item.text} location={item.location} />
           ))}
         </div>
         <div className="flex overflow-hidden relative flex-col items-center pt-12 aspect-square w-[150px] ml-auto -mt-6 -ml-6">

@@ -13,11 +13,15 @@ const images = [
     imageCarousel4.src,
     imageCarousel5.src
 ];
+import { isMobile } from './states';
+import { useRecoilState } from 'recoil';
 const Reviews = () => {
+    const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
+
     return (
         <div className="flex flex-col items-center justify-center my-20 drop-shadow-xl">
-            <p className="text-center text-4xl text-blue-800 py-5 font-medium font-sans">أراء العملاء</p>
-            <Carousel useKeyboardArrows={true} showStatus={false} showArrows={true} infiniteLoop={true} showThumbs={false} autoPlay={true} swipeable={true} interval={2000} centerMode centerSlidePercentage={window.innerWidth < 950 ? 100 : 33.33}>
+            <p className="text-center text-4xl py-5 font-medium font-sans text-zinc-500">أراء العملاء</p>
+            <Carousel useKeyboardArrows={true} showStatus={false} showArrows={true} infiniteLoop={true} showThumbs={false} autoPlay={true} swipeable={true} interval={2000} centerMode centerSlidePercentage={getIsMobile ? 100 : 33.33}>
                 {images.map((image, index) => (
                     <div className="slide pb-10 drop-shadow-xl" key={index}>
                         <img

@@ -18,13 +18,30 @@ import TextWithButton from "@/components/textwithbutton";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CourseCard from "@/components/coursecard";
 import Reviews from "@/components/reviews";
+import { isMobile } from "@/components/states";
+import { useRecoilState } from "recoil";
+import { useEffect } from "react";
+import NavbarMobile from "@/components/navbarmobile";
+import HalfImage from "@/components/halfimage";
+
 export default function Homepage() {
+    const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 950)
+        const handleResize = () => setIsMobile(window.innerWidth < 950);
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize); // Cleanup function
+    }, []);
+
     return (
         <div className="max-w-full">
-            <Navbar />
+            {getIsMobile ? <NavbarMobile /> : <Navbar/> }            
             <JoinNow />
             <Category />
-            <Carousel useKeyboardArrows={true} showStatus={false} showArrows={true} infiniteLoop={true} showThumbs={false} autoPlay={true} swipeable={true} interval={2000} centerMode centerSlidePercentage={window.innerWidth < 950 ? 100 : 33.33}>
+            <Carousel useKeyboardArrows={true} showStatus={false} showArrows={true} infiniteLoop={true} showThumbs={false} autoPlay={true} swipeable={true} interval={2000} centerMode centerSlidePercentage={getIsMobile ? 100 : 33.33}>
                 {images.map((image, index) => (
                     <div className="slide py-5" key={index}>
                         <img
@@ -36,7 +53,7 @@ export default function Homepage() {
                 ))}
             </Carousel>
             <TextWithButton />
-            <Carousel useKeyboardArrows={true} showStatus={false} showArrows={true} infiniteLoop={true} showThumbs={false} autoPlay={true} swipeable={true} interval={2000} centerMode centerSlidePercentage={window.innerWidth < 950 ? 100 : 33.33}>
+            <Carousel useKeyboardArrows={true} showStatus={false} showArrows={true} infiniteLoop={true} showThumbs={false} autoPlay={true} swipeable={true} interval={2000} centerMode centerSlidePercentage={getIsMobile ? 100 : 33.33}>
                 {images.map((image, index) => (
                     <div key={index} className="slide px-10 py-2"
                     >
@@ -50,7 +67,9 @@ export default function Homepage() {
 
                 ))}
             </Carousel>
-            <Reviews/>
+            <Reviews />
+            <HalfImage />
+
         </div>
 
     );
