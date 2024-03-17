@@ -15,7 +15,7 @@ const images = [
 ];
 import { Carousel } from "react-responsive-carousel";
 import TextWithButton from "@/components/textwithbutton";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./carousel.min.css";
 import CourseCard from "@/components/coursecard";
 import Reviews from "@/components/reviews";
 import { isMobile } from "@/components/states";
