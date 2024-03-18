@@ -52,8 +52,8 @@ export default function PaymentMethodsPage() {
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full flex flex-col items-end pt-10 px-10 bg-[#1BBBA4]">
-                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[17vh]">
-                    <img src={Ragahy.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[17vh] outline outline-2 outline-black" />
+                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                    <img src={Ragahy.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black" />
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
                         اﻟﺮاﺟﺤﻲ
                     </h1>
@@ -82,8 +82,8 @@ export default function PaymentMethodsPage() {
                     </div>
                 </div>
 
-                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[17vh]">
-                    <img src={FAB.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[17vh] outline outline-2 outline-black" />
+                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                    <img src={FAB.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
                         ﺑﻨﻚ أﺑﻮﻇبي اﻷول
@@ -117,8 +117,8 @@ export default function PaymentMethodsPage() {
                     </div>
                 </div>
 
-                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[17vh]">
-                    <img src={SNB.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[17vh] outline outline-2 outline-black" />
+                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                    <img src={SNB.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
                         اﻻﻫلي اﻟﺴﻌﻮدي
@@ -148,8 +148,8 @@ export default function PaymentMethodsPage() {
                     </div>
                 </div>
 
-                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[17vh]">
-                    <img src={BankMisr.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[17vh] outline outline-2 outline-black" />
+                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                    <img src={BankMisr.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
                         ﺑﻨﻚ ﻣصر
@@ -179,8 +179,8 @@ export default function PaymentMethodsPage() {
                     </div>
                 </div>
 
-                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[17vh]">
-                    <img src={BAM.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[17vh] outline outline-2 outline-black" />
+                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                    <img src={BAM.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
                         اﻟﺒﻨﻚ اﻻﻫلي اﻟﻤصري
@@ -210,8 +210,8 @@ export default function PaymentMethodsPage() {
                     </div>
                 </div>
 
-                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[17vh]">
-                    <img src={MoneyGram.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[17vh] outline outline-2 outline-black bg-white" />
+                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                    <img src={MoneyGram.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black bg-white" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
                         ﻣﻮﻧﻲ ﺟﺮام
@@ -242,8 +242,8 @@ export default function PaymentMethodsPage() {
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-5 px-10 bg-[#1BBBA4]">
-                <div className="slide w-full px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[17vh]">
-                    <img src={Visa.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[17vh] outline outline-2 outline-black bg-white" />
+                <div className="slide w-full px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                    <img src={Visa.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black bg-white" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
 
@@ -259,8 +259,8 @@ export default function PaymentMethodsPage() {
                         </h2>
                     </div>
                 </div>
-                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[17vh]">
-                    <img src={VodafoneCash.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[17vh] outline outline-2 outline-black bg-white" />
+                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                    <img src={VodafoneCash.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black bg-white" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
 
