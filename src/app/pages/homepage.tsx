@@ -41,7 +41,7 @@ export default function Homepage() {
     }
 
     return (
-        <div className="max-w-full">
+        <div className="max-w-[100vw]">
             {getIsMobile ? <NavbarMobile /> : <Navbar/> }            
             <JoinNow />
             <Category />
