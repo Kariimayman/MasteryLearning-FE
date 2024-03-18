@@ -45,9 +45,9 @@ const NavbarMobile = () => {
                 <img src={logo.src} alt="Logo" className="w-[25vw] h-15" />
             </Link>
 
-            <button className="flex items-center justify-center">
+            <Link href={"/"} className="flex items-center justify-center">
                 <img src={carticon.src} className="w-[10vw] h-15" />
-            </button>
+            </Link>
 
             {isMenuOpen && (
                 <div className="fixed inset-0 bg-gray-800 bg-opacity-75 z-50 h-full">

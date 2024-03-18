@@ -13,6 +13,7 @@ import coursedesc2 from "@/images/coursedesc2.png"
 import coursedesc3 from "@/images/coursedesc3.png"
 import coursedesc4 from "@/images/coursedesc4.png"
 import aftercourseiscomplete from "@/images/aftercourseiscomplete.png"
+import Link from "next/link";
 export default function CoursePage() {
     const [activeTab, setActiveTab] = useState(true); // Initial active tab
     const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
@@ -188,9 +189,9 @@ export default function CoursePage() {
                         </div>
                     </div>
                 </div>
-                <button onClick={() => (location.href = "/ProgramsPage")} className="px-10 py-5 pb-7  my-10 text-3xl mt-4 bg-gradient-to-r font-sans hover:from-green-500 hover:to-blue-500 from-green-600 to-blue-600 text-white rounded-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <Link href={"/ProgramsPage"} onClick={() => (location.href = "/ProgramsPage")} className="px-10 py-5 pb-7  my-10 text-3xl mt-4 bg-gradient-to-r font-sans hover:from-green-500 hover:to-blue-500 from-green-600 to-blue-600 text-white rounded-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                     تصفح كل البرامج
-                </button>
+                </Link>
             </div>
 
         </div >
