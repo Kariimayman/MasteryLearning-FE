@@ -7,12 +7,13 @@ interface CardProps {
 }
 const CourseCard: React.FC<CardProps> = ({ imageUrl, title, price, onClick }) => {
     return (
-        <div className="w-full p-4 rounded overflow-hidden shadow-md cursor-pointer" onClick={() => (location.href = "/Course")}> 
+        <div className="w-full p-4 rounded overflow-hidden shadow-md cursor-pointer" onClick={() => (location.href = "/Course")}>
             <img loading='lazy' className="w-full h-48 object-cover" src={imageUrl} alt={title} />
             <div className="mt-6">
                 <h2 className="text-xl font-bold text-black py-2">{title}</h2>
                 <div className="flex justify-between items-center my-5"> {/* Corrected placement */}
-                    <p className="text-gray-700  py-2 pl-5 text-2xl">${price.toFixed(2)}</p>
+                    <p className='line-through line-through-offset-[10px] decoration-[3px] text-gray-700  font-sans text-xl w-1/5'>${30}</p>
+                    <p className="text-gray-700  py-2 text-2xl -ml-20">${price.toFixed(2)}</p>
                     <button
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                         onClick={onClick}
