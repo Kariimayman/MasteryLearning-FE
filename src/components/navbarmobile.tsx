@@ -51,7 +51,7 @@ const NavbarMobile = () => {
 
             {isMenuOpen && (
                 <div className="fixed inset-0 bg-gray-800 bg-opacity-75 z-50 h-full">
-                    <div className="flex justify-start h-full bg-white max-w-[40vw]">
+                    <div className="flex justify-start h-full bg-white max-w-[50vw]">
                         <div className="bg-white w-64">
                             <div className="grid grid-cols-1 gap-3  justify-center my-20 max-md:flex-wrap max-md:max-w-full ">
                                 <button className=" flex items-center justify-center " onClick={() => setMenuOpen(false)}>
