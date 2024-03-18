@@ -128,7 +128,7 @@ export default function CoursePage() {
             </div>
             <div className="flex flex-row items-center justify-between sm:px-10 md:px-33.33 lg:px-60 py-10">
 
-                <div className="flex flex-col items-center hover:transform ">
+                <div className="flex flex-col items-center hover:transform " >
                     <img loading='lazy' src={coursedesc.src} alt="Image 1" className=" w-full  bg-no-repeat bg-center bg-cover rounded" />
                     <div>
                         <p className="sm:text-l md:text-xl lg:text-2xl  text-center text-black  font-sans ">عدد الطلاب </p>
