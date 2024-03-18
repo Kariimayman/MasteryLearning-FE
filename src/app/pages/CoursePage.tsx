@@ -80,7 +80,7 @@ export default function CoursePage() {
             <div className="flex flex-col justify-center w-[80vw] mx-auto  bg-gray-100 rounded-2xl shadow-xl ">
                 <div className="flex justify-center item-center ">
                     <button
-                        className={`py-5 w-full text-[#54595f] font-sans text-3xl md:text-5xl hover:bg-[#6ec1e4] ${activeTab === true ? ' bg-[#6ec1e4]' : 'bg-[#E2EDEF]'
+                        className={`py-5 w-full text-[#54595f] font-sans text-3xl sm:text-xl hover:bg-[#6ec1e4] ${activeTab === true ? ' bg-[#6ec1e4]' : 'bg-[#E2EDEF]'
                             }`}
                         onClick={() => setActiveTab(true)}
                     >
@@ -97,28 +97,28 @@ export default function CoursePage() {
 
                     </div>
                 </div>
-                <div className="text-black py-10 text-2xl leading-loose font-sans mb:text-l sm:text-m">
-                    {activeTab ? (
-                        <div className="px-10 sm:px-5">  {/* Added responsive padding classes */}
-                            {course.lectures.map((lecture, index) => (
-                                <div key={index} className="flex justify-end item-center">
-                                    <ul>
-                                        <li>{lecture}</li>
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="px-10 sm:px-5">  {/* Added responsive padding classes */}
-                            {course.curriculum.map((curriculum, index) => (
-                                <div key={index} className="flex justify-end item-center hover:bg-gray-400 cursor-pointer" onClick={() => (location.href = "/Course")}>
-                                    <ul>
-                                        <li>{curriculum}</li>
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                    )}
+                <div className="text-black py-10 font-sans  text-xl sm:text-2xl">                  
+                  {activeTab ? (
+                    <div className="px-5 sm:px-10">  {/* Added responsive padding classes */}
+                        {course.lectures.map((lecture, index) => (
+                            <div key={index} className="flex justify-end item-center leading-loose ">
+                                <ul>
+                                    <li>{lecture}</li>
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="px-10 sm:px-5">  {/* Added responsive padding classes */}
+                        {course.curriculum.map((curriculum, index) => (
+                            <div key={index} className="flex justify-end item-center hover:bg-gray-400 cursor-pointer" onClick={() => (location.href = "/Course")}>
+                                <ul>
+                                    <li>{curriculum}</li>
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                )}
                 </div>
             </div>
             <div className="flex justify-center pt-10">
