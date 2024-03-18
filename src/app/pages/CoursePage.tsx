@@ -171,7 +171,7 @@ export default function CoursePage() {
                                 src={aftercourseiscomplete.src}
                             />
                         </div>
-                        <div className="w-full md:w-1/2 flex flex-col items-end md:px-10 p-20">
+                        <div className="w-full md:w-1/2 flex flex-col items-end  px-5   ">
                             <h1 className='text-black font-sans text-right text-4xl pb-5'>
                                 في هذا البرنامج تحصل على
                             </h1>
