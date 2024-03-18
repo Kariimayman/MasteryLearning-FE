@@ -1,20 +1,24 @@
 import Navbar from "@/components/navbar";
 import NavbarMobile from "@/components/navbarmobile";
 import { isMobile } from "@/components/states";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import paymentmethod from "@/images/paymentmethod.jpg"
 export default function PaymentMethodsPage() {
     const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
+    const [loading, setLoading] = useState(true); // New loading state
 
     useEffect(() => {
         setIsMobile(window.innerWidth < 950)
         const handleResize = () => setIsMobile(window.innerWidth < 950);
-
+        setLoading(false);
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize); // Cleanup function
     }, []);
+    if (loading) {
+        return <div>Loading...</div>; // Render a loading indicator while computing the initial value
+    }
     return (
         <div className="max-w-full">
             {getIsMobile ? <NavbarMobile /> : <Navbar />}

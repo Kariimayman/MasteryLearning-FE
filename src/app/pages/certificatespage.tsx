@@ -7,6 +7,7 @@ import Certificates from "@/images/certificates.jpg";
 export default function CertificatesPage() {
     const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
     const [searchTerm, setSearchTerm] = useState('');
+    const [loading, setLoading] = useState(true); // New loading state
 
     const handleInputChange = (event: any) => {
         setSearchTerm(event.target.value);
@@ -15,14 +16,17 @@ export default function CertificatesPage() {
     useEffect(() => {
         setIsMobile(window.innerWidth < 950)
         const handleResize = () => setIsMobile(window.innerWidth < 950);
-
+        setLoading(false);
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize); // Cleanup function
     }, []);
+    if (loading) {
+        return <div>Loading...</div>; // Render a loading indicator while computing the initial value
+    }
     return (
         <div className="max-w-full">
-            {getIsMobile ? <NavbarMobile /> : <Navbar />}
+            {!getIsMobile ? <Navbar /> : <NavbarMobile />}
             <div className="flex flex-col items-center justify-center h-auto pb-10">
                 <div className="flex items-center justify-center w-[90vw]">
                     <div className="w-full flex flex-col items-center md:flex-row">

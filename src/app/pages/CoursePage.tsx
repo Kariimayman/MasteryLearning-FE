@@ -15,6 +15,8 @@ import aftercourseiscomplete from "@/images/aftercourseiscomplete.png"
 export default function CoursePage() {
     const [activeTab, setActiveTab] = useState(true); // Initial active tab
     const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
+    const [loading, setLoading] = useState(true); // New loading state
+
     const course = {
         id: 1,
         price: 99,
@@ -38,9 +40,13 @@ export default function CoursePage() {
         const handleResize = () => setIsMobile(window.innerWidth < 950);
 
         window.addEventListener('resize', handleResize);
+        setLoading(false);
 
         return () => window.removeEventListener('resize', handleResize); // Cleanup function
     }, []);
+    if (loading) {
+        return <div>Loading...</div>; // Render a loading indicator while computing the initial value
+    }
     return (
         <div className="max-w-full">
             {!getIsMobile ? <Navbar /> : <NavbarMobile />}
