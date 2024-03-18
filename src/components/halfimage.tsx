@@ -7,6 +7,7 @@ const HalfImage = () => {
                 <div className="w-full flex flex-col items-center md:flex-row">
                     <div className="w-full md:w-1/2 flex items-center justify-center">
                         <img
+                            loading='lazy'
                             className='w-full object-cover h-full'
                             alt="Image"
                             src={homefooter.src}

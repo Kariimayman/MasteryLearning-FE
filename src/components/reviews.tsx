@@ -25,9 +25,10 @@ const Reviews = () => {
                 {images.map((image, index) => (
                     <div className="slide pb-10 drop-shadow-xl" key={index}>
                         <img
+                            loading='lazy'
                             alt="Image Description"
                             src={image}
-                            style={{ width: "80%", height: "auto"}}
+                            style={{ width: "80%", height: "auto" }}
                         />
                     </div>
                 ))}

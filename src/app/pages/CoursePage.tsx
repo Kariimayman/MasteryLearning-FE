@@ -49,6 +49,7 @@ export default function CoursePage() {
                     <div className="w-full flex flex-col items-center md:flex-row">
                         <div className="w-full md:w-1/2 flex items-center justify-center">
                             <img
+                                loading='lazy'
                                 className='w-full object-cover h-full'
                                 alt="Image"
                                 src={CourseTest.src}
@@ -114,9 +115,15 @@ export default function CoursePage() {
                     )}
                 </div>
             </div>
+            <div className="flex justify-center pt-10">
+                <button className="px-10 py-5 pb-7 text-3xl mt-4 bg-red-600 rounded-full font-sans hover:bg-red-500">
+                    مميزات الدورة
+                </button>
+            </div>
             <div className="flex flex-row items-center justify-between sm:px-10 md:px-33.33 lg:px-60 py-10">
+
                 <div className="flex flex-col items-center hover:transform ">
-                    <img src={coursedesc.src} alt="Image 1" className=" w-full  bg-no-repeat bg-center bg-cover rounded" />
+                    <img loading='lazy' src={coursedesc.src} alt="Image 1" className=" w-full  bg-no-repeat bg-center bg-cover rounded" />
                     <div>
                         <p className="sm:text-l md:text-xl lg:text-2xl  text-center text-black  font-sans ">عدد الطلاب </p>
                         <p className="sm:text-l md:text-xl lg:text-2xl text-center text-black  font-sans ">{course.studentscount}</p>
@@ -125,13 +132,13 @@ export default function CoursePage() {
 
                 </div>
                 <div className="flex flex-col items-center " >
-                    <img src={coursedesc2.src} alt="Image 2" className="w-full  bg-no-repeat bg-center bg-cover rounded" />
+                    <img loading='lazy' src={coursedesc2.src} alt="Image 2" className="w-full  bg-no-repeat bg-center bg-cover rounded" />
                     <p className="sm:text-l md:text-xl lg:text-2xl  text-black  font-sans">اللغة</p>
                     <p className="sm:text-l md:text-xl lg:text-2xl  text-black  font-sans">{course.Language}</p>
 
                 </div>
                 <div className="flex flex-col items-center" >
-                    <img src={coursedesc3.src} alt="Image 3" className="w-full  bg-no-repeat bg-center bg-cover rounded" />
+                    <img loading='lazy' src={coursedesc3.src} alt="Image 3" className="w-full  bg-no-repeat bg-center bg-cover rounded" />
                     <div>
                         <p className="sm:text-l md:text-xl lg:text-2xl  text-center text-black  font-sans ">المدة الزمنية   </p>
                         <p className="sm:text-l md:text-xl lg:text-2xl text-center text-black  font-sans ">{course.hourscount}</p>
@@ -139,7 +146,7 @@ export default function CoursePage() {
                     </div>
                 </div>
                 <div className="flex flex-col items-center ">
-                    <img src={coursedesc4.src} alt="Image 4" className="w-full  bg-no-repeat bg-center bg-cover rounded" />
+                    <img loading='lazy' src={coursedesc4.src} alt="Image 4" className="w-full  bg-no-repeat bg-center bg-cover rounded" />
                     <div className="bg-[]">
                         <p className="sm:text-l md:text-xl lg:text-2xl  text-center text-black  font-sans ">المحاضرات   </p>
                         <p className="sm:text-l md:text-xl lg:text-2xl text-center text-black  font-sans ">{course.lecturescount}</p>
@@ -152,6 +159,7 @@ export default function CoursePage() {
                     <div className="w-full flex flex-col items-center md:flex-row">
                         <div className="w-full md:w-1/2 flex items-center justify-center">
                             <img
+                                loading='lazy'
                                 className='w-full object-cover h-full'
                                 alt="Image"
                                 src={aftercourseiscomplete.src}
@@ -173,7 +181,7 @@ export default function CoursePage() {
                         </div>
                     </div>
                 </div>
-                <button className="px-10 py-5 pb-7  my-10 text-3xl mt-4 bg-gradient-to-r font-sans hover:from-green-500 hover:to-blue-500 from-green-600 to-blue-600 text-white rounded-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <button onClick={() => (location.href = "/ProgramsPage")} className="px-10 py-5 pb-7  my-10 text-3xl mt-4 bg-gradient-to-r font-sans hover:from-green-500 hover:to-blue-500 from-green-600 to-blue-600 text-white rounded-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                     تصفح كل البرامج
                 </button>
             </div>

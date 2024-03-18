@@ -55,7 +55,7 @@ const NavbarMobile = () => {
                         <div className="bg-white w-64">
                             <div className="grid grid-cols-1 gap-3  justify-center my-20 max-md:flex-wrap max-md:max-w-full ">
                                 <button className=" flex items-center justify-center " onClick={() => setMenuOpen(false)}>
-                                    <img src={closeicon.src} alt="Logo" className="w-10 h-15" />
+                                    <img loading='lazy' src={closeicon.src} alt="Logo" className="w-10 h-15" />
                                 </button>
                                 {navigationItems.map((item, index) => (
                                     <NavItem key={index} text={item.text} location={item.location} />
