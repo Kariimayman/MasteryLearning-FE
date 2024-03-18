@@ -18,6 +18,8 @@ import TextWithButton from "@/components/textwithbutton";
 import "./carousel.min.css";
 import CourseCard from "@/components/coursecard";
 import Reviews from "@/components/reviews";
+import Loading from "@/components/loading";
+
 import { isMobile } from "@/components/states";
 import { useRecoilState } from "recoil";
 import { useEffect, useState } from "react";
@@ -37,12 +39,12 @@ export default function Homepage() {
         return () => window.removeEventListener('resize', handleResize); // Cleanup function
     }, []);
     if (loading) {
-        return <div>Loading...</div>; // Render a loading indicator while computing the initial value
+        return <Loading />; // Render a loading indicator while computing the initial value
     }
 
     return (
         <div className="max-w-[100vw]">
-            {getIsMobile ? <NavbarMobile /> : <Navbar/> }            
+            {getIsMobile ? <NavbarMobile /> : <Navbar />}
             <JoinNow />
             <Category />
             <Carousel useKeyboardArrows={true} showStatus={false} showArrows={true} infiniteLoop={true} showThumbs={false} autoPlay={true} swipeable={true} interval={2000} centerMode centerSlidePercentage={getIsMobile ? 100 : 33.33}>

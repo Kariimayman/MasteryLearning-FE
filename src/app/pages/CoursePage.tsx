@@ -6,6 +6,7 @@ import { useRecoilState } from "recoil";
 import CourseTest from "@/images/CourseTest.jpeg"
 import OurPrograms from "@/images/OurPrograms.png"
 import CourseCard from "@/components/coursecard";
+import Loading from "@/components/loading";
 
 import coursedesc from "@/images/coursedesc.png"
 import coursedesc2 from "@/images/coursedesc2.png"
@@ -45,7 +46,7 @@ export default function CoursePage() {
         return () => window.removeEventListener('resize', handleResize); // Cleanup function
     }, []);
     if (loading) {
-        return <div>Loading...</div>; // Render a loading indicator while computing the initial value
+        return <Loading />; // Render a loading indicator while computing the initial value
     }
     return (
         <div className="max-w-full">
@@ -97,28 +98,28 @@ export default function CoursePage() {
 
                     </div>
                 </div>
-                <div className="text-black py-10 font-sans  text-xl sm:text-2xl">                  
-                  {activeTab ? (
-                    <div className="px-5 sm:px-10">  {/* Added responsive padding classes */}
-                        {course.lectures.map((lecture, index) => (
-                            <div key={index} className="flex justify-end item-center leading-loose ">
-                                <ul>
-                                    <li>{lecture}</li>
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <div className="px-10 sm:px-5">  {/* Added responsive padding classes */}
-                        {course.curriculum.map((curriculum, index) => (
-                            <div key={index} className="flex justify-end item-center hover:bg-gray-400 cursor-pointer" onClick={() => (location.href = "/Course")}>
-                                <ul>
-                                    <li>{curriculum}</li>
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-                )}
+                <div className="text-black py-10 font-sans  text-xl sm:text-2xl">
+                    {activeTab ? (
+                        <div className="px-5 sm:px-10">  {/* Added responsive padding classes */}
+                            {course.lectures.map((lecture, index) => (
+                                <div key={index} className="flex justify-end item-center leading-loose ">
+                                    <ul>
+                                        <li>{lecture}</li>
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="px-10 sm:px-5">  {/* Added responsive padding classes */}
+                            {course.curriculum.map((curriculum, index) => (
+                                <div key={index} className="flex justify-end item-center hover:bg-gray-400 cursor-pointer" onClick={() => (location.href = "/Course")}>
+                                    <ul>
+                                        <li>{curriculum}</li>
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
             <div className="flex justify-center pt-10">
@@ -192,6 +193,6 @@ export default function CoursePage() {
                 </button>
             </div>
 
-        </div>
+        </div >
     )
 }

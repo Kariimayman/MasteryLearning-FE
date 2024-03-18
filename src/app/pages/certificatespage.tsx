@@ -3,6 +3,8 @@ import NavbarMobile from "@/components/navbarmobile";
 import { isMobile } from "@/components/states";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import Loading from "@/components/loading";
+
 import Certificates from "@/images/certificates.jpg";
 export default function CertificatesPage() {
     const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
@@ -22,7 +24,7 @@ export default function CertificatesPage() {
         return () => window.removeEventListener('resize', handleResize); // Cleanup function
     }, []);
     if (loading) {
-        return <div>Loading...</div>; // Render a loading indicator while computing the initial value
+        return <Loading />; // Render a loading indicator while computing the initial value
     }
     return (
         <div className="max-w-full">
@@ -55,6 +57,7 @@ export default function CertificatesPage() {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }

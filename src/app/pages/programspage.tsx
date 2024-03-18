@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import OurPrograms from "@/images/OurPrograms.png"
 import CourseCard from "@/components/coursecard";
+import Loading from "@/components/loading";
+
 export default function ProgramsPage() {
     const courses = [
         { imageUrl: OurPrograms.src, title: "Test Course", price: 20 },
@@ -28,7 +30,7 @@ export default function ProgramsPage() {
         return () => window.removeEventListener('resize', handleResize); // Cleanup function
     }, []);
     if (loading) {
-        return <div>Loading...</div>; // Render a loading indicator while computing the initial value
+        return <Loading />; // Render a loading indicator while computing the initial value
     }
     return (
         <div className="max-w-full">

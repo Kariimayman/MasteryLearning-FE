@@ -12,6 +12,7 @@ import BAM from "@/images/BAM.jpg"
 import MoneyGram from "@/images/MoneyGram.png"
 import Visa from "@/images/Visa.png"
 import VodafoneCash from "@/images/VodafoneCash.png"
+import Loading from "@/components/loading";
 
 
 
@@ -28,10 +29,10 @@ export default function PaymentMethodsPage() {
         return () => window.removeEventListener('resize', handleResize); // Cleanup function
     }, []);
     if (loading) {
-        return <div>Loading...</div>; // Render a loading indicator while computing the initial value
+        return <Loading />; // Render a loading indicator while computing the initial value
     }
     return (
-        <div className="max-w-full dir='rtl'">
+        <div className="max-w-full">
             {getIsMobile ? <NavbarMobile /> : <Navbar />}
             <div className="flex flex-col items-center justify-center h-auto pb-10">
                 <div className="flex items-center justify-center w-[90vw]">
@@ -242,7 +243,7 @@ export default function PaymentMethodsPage() {
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-5 px-10 bg-[#1BBBA4]">
-                <div className="slide w-full px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                <div className="slide w-full  px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
                     <img src={Visa.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black bg-white" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
@@ -259,7 +260,7 @@ export default function PaymentMethodsPage() {
                         </h2>
                     </div>
                 </div>
-                <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
+                <div className="slide w-full px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black mt-[15vh]">
                     <img src={VodafoneCash.src} alt="Rounded Image" className="position: relative z-1 rounded-full w-1/2 h-50 m-auto -mt-[15vh] outline outline-2 outline-black bg-white" />
 
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
