@@ -11,7 +11,7 @@ import closeicon from "@/images/closeicon.png"
 const NavItem = ({ text, location }: any) => {
     const isActive = usePathname() === location; // Direct comparison
     return (
-        <Link href={location} className={`grow sm:text-l md:text-xl lg:text-3xl text-center hover:text-green-500 font-sans  ${isActive ? 'text-green-500' : 'text-zinc-500'} transition-colors`}>
+        <Link href={location} className={`grow text-2xl text-center hover:text-green-500 font-sans  ${isActive ? 'text-green-500' : 'text-zinc-500'} transition-colors`}>
             {text}
         </Link>
     );
@@ -41,9 +41,9 @@ const NavbarMobile = () => {
                 <img src={menuicon.src} className="w-[10vw] h-15" />
             </button>
 
-            <div className="flex items-center justify-center">
+            <Link href={"/"} className="flex items-center justify-center">
                 <img src={logo.src} alt="Logo" className="w-[25vw] h-15" />
-            </div>
+            </Link>
 
             <button className="flex items-center justify-center">
                 <img src={carticon.src} className="w-[10vw] h-15" />
@@ -51,7 +51,7 @@ const NavbarMobile = () => {
 
             {isMenuOpen && (
                 <div className="fixed inset-0 bg-gray-800 bg-opacity-75 z-50 h-full">
-                    <div className="flex justify-start h-full bg-white max-w-[30vw]">
+                    <div className="flex justify-start h-full bg-white max-w-[40vw]">
                         <div className="bg-white w-64">
                             <div className="grid grid-cols-1 gap-3  justify-center my-20 max-md:flex-wrap max-md:max-w-full ">
                                 <button className=" flex items-center justify-center " onClick={() => setMenuOpen(false)}>
