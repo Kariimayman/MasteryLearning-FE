@@ -13,7 +13,7 @@ const HalfImage = () => {
                             src={homefooter.src}
                         />
                     </div>
-                    <div className="w-full md:w-1/2 flex flex-col items-end md:px-10 p-20">
+                    <div className="w-full md:w-1/2 flex flex-col items-end  px-5 py-5">
                         <h1 className='text-[#DB7118] font-sans text-right text-5xl pb-5'>الكورسات​</h1>
                         <h1 className='text-[#5A513F] font-sans text-right text-5xl pb-10'>تعلم من الخبراء</h1>
                         <p className="text-xl leading-loose text-[#5A513F] text-right font-sans pb-10">اكتشف المهارات الأكثر طلبا في السوق، وتمتع بقدر أكبر من الحرية المالية، وانتقل بحياتك المهنية للمستوى الأعلى، من خلال التعلم من خبرائنا المحترفين، واللي بيجمعوا بين المعرفة العلمية، والخبرة العملية في مجالهم، ودي أهم ميزة بتعظم القيمة اللي بنقدمها لك.

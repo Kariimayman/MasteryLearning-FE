@@ -40,7 +40,7 @@ export default function PaymentMethodsPage() {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 py-5 px-20 bg-[#1BBBA4]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full flex flex-col items-end pt-10 px-10 bg-[#1BBBA4]">
                 <div className="slide px-10 py-10 bg-white rounded-[100px] shadow-2xl outline outline-2 outline-black">
                     <h1 className='text-[#1BBBA4] font-sans text-right text-3xl pb-10'>
                         اﻟﺮاﺟﺤﻲ
