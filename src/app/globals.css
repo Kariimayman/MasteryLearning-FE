@@ -21,6 +21,11 @@ body {
   background: white;
 }
 
+html,
+body {
+  font-family: font-sans, sans-serif;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

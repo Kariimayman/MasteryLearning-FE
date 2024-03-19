@@ -23,8 +23,8 @@ const navigationItems = [
     { text: "من نحن", location: "/AboutUs" },
     { text: "الشهادات", location: "/Certificates" },
     { text: "طرق الدفع", location: "/PaymentMethods" },
-    { text: "تسجيل دخول", location: "/PaymentMethods" },
-    { text: "انشاء حساب", location: "/PaymentMethods" },
+    { text: "تسجيل دخول", location: "/SignUp" },
+    { text: "انشاء حساب", location: "/Login" },
 
 
 ];

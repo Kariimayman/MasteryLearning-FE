@@ -28,11 +28,16 @@ function NavigationBar() {
     <header className="flex flex-col  items-center justify-between px-16 py-5 bg-white max-md:flex-wrap max-md:px-5 rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl rounded-br-3xl drop-shadow-xl mb-10">
       <nav className="flex flex-row text-gray-600 items-center max-md:flex-wrap max-md:max-w-full h-full w-full ">
         <div className="flex items-center -mr-20">
-          <button className="bg-blue-500 hover:bg-blue-400 text-white px-9 py-4 rounded-l -mr-7  font-sans">انشاء حساب</button>
+          <Link href={"/SignUp"}>
+            <button className="bg-blue-500 hover:bg-blue-400 text-white px-9 py-4 rounded-l -mr-7  font-sans">انشاء حساب</button>
+          </Link>
           <div className="w-10 h-10 bg-white 200 rounded-full flex items-center justify-center mx-2 z-20">
-            <span className="text-black">او</span>
+            <span className="text-black font-sans">او</span>
           </div>
-          <button className="bg-green-500 hover:bg-green-400 text-white px-9 py-4 rounded-r -ml-7  font-sans "> تسجيل دخول</button>
+          <Link href={"/Login"}>
+            <button className="bg-green-500 hover:bg-green-400 text-white px-9 py-4 rounded-r -ml-7  font-sans "> تسجيل دخول</button>
+          </Link>
+
         </div>
         <div className="flex gap-3  justify-center items-center my-auto  text-zinc-500 max-md:flex-wrap max-md:max-w-full flex-grow -mr-20 px-20">
           {navigationItems.map((item, index) => (
