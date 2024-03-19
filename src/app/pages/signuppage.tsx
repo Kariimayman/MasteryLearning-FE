@@ -8,6 +8,8 @@ import Loading from "@/components/loading";
 export default function SignUpPage() {
     const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
     const [loading, setLoading] = useState(true); // New loading state
+    const [Error, setError] = useState(""); // New loading state
+
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
 
@@ -25,7 +27,9 @@ export default function SignUpPage() {
         console.log(country)
         console.log(password)
         console.log(confirmpassword)
-
+        if (password !== confirmpassword) {
+            setError("Password and Confirm Password don't match")
+        }
 
         const response = await fetch('/api/auth/login', {
             method: 'POST',
@@ -48,6 +52,7 @@ export default function SignUpPage() {
     return (
         <div className="max-w-full">
             {getIsMobile ? <NavbarMobile /> : <Navbar />}
+
             <div className="flex justify-center items-center py-10">
                 <form onSubmit={handleSubmit} className="flex flex-col items-center w-full rounded-lg shadow-2xl p-10 sm:w-1/2">
                     <label className="text-black py-2 w-3/4 text-right font-sans">اسم المستخدم </label>
@@ -106,7 +111,10 @@ export default function SignUpPage() {
                     <button type="submit" className="inline-flex font-sans items-center px-4 mt-10 py-2 bg-blue-500 hover:bg-blue-700 text-white  rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 disabled:bg-red">
                         انشاء حساب
                     </button>
+
+                    {Error !== "" ? <p className="text-red-600 text-xl  rounded-lg m-auto p-10  text-center">{Error} </p> : <></>}
                 </form>
+
             </div>
 
         </div>

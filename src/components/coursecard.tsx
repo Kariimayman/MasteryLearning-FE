@@ -6,7 +6,7 @@ interface CardProps {
     price: number;
     onClick?: () => void; // Optional function for button click
 }
-const CourseCard: React.FC<CardProps> = ({ imageUrl, title, price, onClick }) => {
+const CourseCard: React.FC<CardProps> = ({ imageUrl, title, price }) => {
     return (
         <Link href={"/Course"}>
             <div className="w-full p-4 rounded overflow-hidden shadow-md ">
@@ -18,12 +18,13 @@ const CourseCard: React.FC<CardProps> = ({ imageUrl, title, price, onClick }) =>
                             <p className='line-through line-through-offset-[10px] decoration-[3px] text-gray-700  font-sans text-xl w-1/5'>${30}</p>
                             <p className="text-gray-700   text-2xl">${price.toFixed(2)}</p>
                         </div>
-                        <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                            onClick={onClick}
-                        >
-                            Buy Now
-                        </button>
+                        <Link href={"/CheckOut"}>
+                            <button
+                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            >
+                                Buy Now
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

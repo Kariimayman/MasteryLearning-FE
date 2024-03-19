@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 const NavItem = ({ text, location }: any) => {
   const isActive = usePathname() === location; // Direct comparison
   return (
-    <Link href={location} className={`grow sm:text-l md:text-xl lg:text-3xl text-center hover:text-green-500 font-sans  ${isActive ? 'text-green-500' : ''} transition-colors`}>
+    <Link href={location} className={`grow sm:text-l md:text-xl lg:text-3xl text-center hover:text-[#1BBBA4] font-sans  ${isActive ? 'text-[#1BBBA4]' : ''} transition-colors`}>
       {text}
     </Link>
   );
@@ -35,7 +35,7 @@ function NavigationBar() {
             <span className="text-black font-sans">او</span>
           </div>
           <Link href={"/Login"}>
-            <button className="bg-green-500 hover:bg-green-400 text-white px-9 py-4 rounded-r -ml-7  font-sans "> تسجيل دخول</button>
+            <button className="bg-[#1BBBA4] hover:bg-green-400 text-white px-9 py-4 rounded-r -ml-7  font-sans "> تسجيل دخول</button>
           </Link>
 
         </div>

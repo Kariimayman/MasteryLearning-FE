@@ -5,10 +5,10 @@ import { isMobile } from "@/components/states";
 import { FormEvent, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import Loading from "@/components/loading";
-
 export default function LoginPage() {
     const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
     const [loading, setLoading] = useState(true); // New loading state
+    const [Error, setError] = useState(""); // New loading state
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -16,9 +16,7 @@ export default function LoginPage() {
         const formData = new FormData(event.currentTarget)
         const email = formData.get('email')
         const password = formData.get('password')
-        console.log(email)
         console.log(password)
-
         const response = await fetch('/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -44,7 +42,7 @@ export default function LoginPage() {
                 <form onSubmit={handleSubmit} className="flex flex-col items-center w-full rounded-lg shadow-2xl p-10 sm:w-1/2">
                     <label className="text-black py-2 w-3/4 text-right font-sans">اسم المستخدم أو البريد الالكتروني</label>
                     <input
-                        type="email"
+                        type="text"
                         name="email"
                         placeholder="Username or Email"
                         required
@@ -61,6 +59,8 @@ export default function LoginPage() {
                     <button type="submit" className="inline-flex font-sans items-center px-4 mt-10 py-2 bg-blue-500 hover:bg-blue-700 text-white  rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400">
                         تسجيل الدخول
                     </button>
+                    {Error !== "" ? <p className="text-red-600 text-xl  rounded-lg m-auto p-10  text-center">{Error} </p> : <></>}
+
                 </form>
             </div>
         </div>

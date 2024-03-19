@@ -65,10 +65,7 @@ export default function Homepage() {
                     >
                         <CourseCard imageUrl={image}
                             title="Product Name"
-                            price={19.99}
-                            onClick={() => {
-                                // Handle button click (e.g., navigate to a payment page)
-                            }} />
+                            price={19.99} />
                     </div>
 
                 ))}

@@ -11,7 +11,7 @@ import closeicon from "@/images/closeicon.png"
 const NavItem = ({ text, location }: any) => {
     const isActive = usePathname() === location; // Direct comparison
     return (
-        <Link href={location} className={`grow text-2xl text-center hover:text-green-500 font-sans  ${isActive ? 'text-green-500' : 'text-zinc-500'} transition-colors`}>
+        <Link href={location} className={`grow text-2xl text-center hover:text-[#1BBBA4] font-sans  ${isActive ? 'text-[#1BBBA4]' : 'text-zinc-500'} transition-colors`}>
             {text}
         </Link>
     );

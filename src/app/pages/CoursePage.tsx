@@ -70,7 +70,7 @@ export default function CoursePage() {
                                     <h1 className='text-black font-sans text-3xl pb-5' >${course.price}</h1>
                                     <h2 className='line-through line-through-offset-[10px] -mr-10 decoration-[3px] text-black font-sans text-xl pb-5'>${course.price + 50}</h2>
                                 </div>
-                                <div className="flex justify-center">  <button className="bg-[#6ec1e4] hover:bg-[#6eeeee] items-center  text-xl text-white px-5 py-5 rounded-full font-sans">Buy Now</button>
+                                <div className="flex justify-center">  <Link href={"/CheckOut"} className="bg-blue-700 hover:bg-blue-600 items-center  text-xl text-white px-5 py-5 rounded-full font-sans">Buy Now</Link>
                                 </div>
                             </div>
                             <p className="text-xl leading-loose text-black text-center font-sans pb-10 -mb-20 pt-5"> {course.description} </p>
@@ -82,14 +82,14 @@ export default function CoursePage() {
             <div className="flex flex-col justify-center w-[80vw] mx-auto  bg-gray-100 rounded-2xl shadow-xl ">
                 <div className="flex justify-center item-center ">
                     <button
-                        className={`py-5 w-full text-[#54595f] font-sans text-3xl sm:text-xl hover:bg-[#6ec1e4] ${activeTab === true ? ' bg-[#6ec1e4]' : 'bg-[#E2EDEF]'
+                        className={`py-5 w-full text-xl sm:text-3xl hover:bg-[#1BBBA4] ${activeTab === true ? ' bg-[#1BBBA4]' : 'bg-[#E2EDEF] text-black'
                             }`}
                         onClick={() => setActiveTab(true)}
                     >
                         المنهج الدراسي
                     </button>
                     <button
-                        className={`py-2 w-full text-[#54595f] font-sans text-3xl md:text-5xl hover:bg-[#6ec1e4] ${activeTab === false ? ' bg-[#6ec1e4]' : 'bg-[#E2EDEF]'
+                        className={`py-5 w-full text-xl sm:text-3xl hover:bg-[#1BBBA4] ${activeTab === false ? ' bg-[#1BBBA4]' : 'bg-[#E2EDEF] text-black'
                             }`}
                         onClick={() => setActiveTab(false)}
                     >
@@ -189,7 +189,7 @@ export default function CoursePage() {
                         </div>
                     </div>
                 </div>
-                <Link href={"/ProgramsPage"} onClick={() => (location.href = "/ProgramsPage")} className="px-10 py-5 pb-7  my-10 text-3xl mt-4 bg-gradient-to-r font-sans hover:from-green-500 hover:to-blue-500 from-green-600 to-blue-600 text-white rounded-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <Link href={"/ProgramsPage"} className="px-10 py-5 pb-7  my-10 text-3xl mt-4 bg-gradient-to-r font-sans hover:from-green-500 hover:to-blue-500 from-green-600 to-blue-600 text-white rounded-full shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                     تصفح كل البرامج
                 </Link>
             </div>
