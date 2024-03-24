@@ -9,4 +9,8 @@ export const isMobile = atom({
             return false; // Default to false if an error occurs
         }
     }
-})  
+}) 
+export const isAdmin = atom({
+    key: "isAdmin",
+    default: false
+}) 

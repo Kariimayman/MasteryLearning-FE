@@ -20,14 +20,17 @@ import CourseCard from "@/components/coursecard";
 import Reviews from "@/components/reviews";
 import Loading from "@/components/loading";
 
-import { isMobile } from "@/components/states";
+import { isAdmin, isMobile } from "@/components/states";
 import { useRecoilState } from "recoil";
 import { useEffect, useState } from "react";
 import NavbarMobile from "@/components/navbarmobile";
 import HalfImage from "@/components/halfimage";
+import { redirect } from "next/navigation";
 
 export default function Homepage() {
     const [getIsMobile, setIsMobile] = useRecoilState(isMobile);
+    const [getIsAdmin, setIsAdmin] = useRecoilState(isAdmin);
+
     const [loading, setLoading] = useState(true); // New loading state
 
     useEffect(() => {
@@ -41,7 +44,9 @@ export default function Homepage() {
     if (loading) {
         return <Loading />; // Render a loading indicator while computing the initial value
     }
-
+    if (getIsAdmin) {
+        redirect('/AdminHome')
+    }
     return (
         <div className="max-w-[100vw]">
             {getIsMobile ? <NavbarMobile /> : <Navbar />}
