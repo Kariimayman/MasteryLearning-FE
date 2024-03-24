@@ -12,6 +12,7 @@ export interface Course {
     hourscount: string,
     Language: string,
     tempcount: string,
+    category: string,
     Complition: string[],
 
 }
@@ -20,6 +21,7 @@ export default function AdminHomePage() {
         {
             id: "1",
             price: "99",
+            category: "دبلومات تدريبية",
             title: "دبلوم التربية الخاصة",
             description: "استعد للانغماس في عالم الشحن اللاسلكي مع دورتنا المميزة ستقودك هذه الدورة إلى رحلة شاملة لفهم أحدث تقنيات الشحن والتحولات في هذا المجال المثير. ستتعلم كيفية اختيار واستخدام شواحن الطاقة بفعالية، وتحسين أداء البطارية، وتكوين مفاهيم الشحن الذكي. بالإضافة إلى ذلك، ستحصل على إشارات حول التقنيات المستقبلية لتكنولوجيا الشحن. انضم إلينا اليوم واجعل تجربة الشحن تكون سلسة ومتقدمة",
             curriculum: ["المحاضرة الاولى", "المحاضرة الثانية", "المحاضرة الثالثة"]
@@ -36,7 +38,8 @@ export default function AdminHomePage() {
         {
             id: "2",
             price: "99",
-            title: "دبلوم التربية الخاصة",
+            category: "ماجستير مهني",
+            title: "دبلوم علم النفس الايجابي",
             description: "استعد للانغماس في عالم الشحن اللاسلكي مع دورتنا المميزة ستقودك هذه الدورة إلى رحلة شاملة لفهم أحدث تقنيات الشحن والتحولات في هذا المجال المثير. ستتعلم كيفية اختيار واستخدام شواحن الطاقة بفعالية، وتحسين أداء البطارية، وتكوين مفاهيم الشحن الذكي. بالإضافة إلى ذلك، ستحصل على إشارات حول التقنيات المستقبلية لتكنولوجيا الشحن. انضم إلينا اليوم واجعل تجربة الشحن تكون سلسة ومتقدمة",
             curriculum: ["المحاضرة الاولى", "المحاضرة الثانية", "المحاضرة الثالثة"]
             ,
@@ -53,50 +56,40 @@ export default function AdminHomePage() {
 
     const users = [
         {
-            username: "test1",
+            username: "user 1",
             email: "test1",
             phonenumber: "test1",
             country: "test1",
             courses: ["1", "2"],
-            requested: ["1", "2"]
         },
         {
-            username: "test2",
+            username: "user 2",
             email: "test2",
             phonenumber: "test2",
             country: "test2",
             courses: ["2", "3"],
-            requested: ["1", "2"]
 
         },
         {
-            username: "test3",
+            username: "user 3",
             email: "test3",
             phonenumber: "test3",
             country: "test3",
             courses: ["3", "4"],
-            requested: ["1", "2"]
         }
     ]
     const requests = [
         {
             userid: "1",
-            username: "test1",
+            username: "User 1",
             coursetitle: "دبلوم التربية الخاصة",
             courseid: "1",
 
         },
         {
             userid: "1",
-            username: "test1",
-            coursetitle: "دبلوم التربية الخاصة",
-            courseid: "1",
-
-        },
-        {
-            userid: "1",
-            username: "test1",
-            coursetitle: "دبلوم التربية الخاصة",
+            username: "User 3 ",
+            coursetitle: "دبلوم علم النفس الايجابي  ",
             courseid: "1",
         },
     ]
@@ -115,6 +108,7 @@ export default function AdminHomePage() {
         price: "",
         title: "  ",
         description: "",
+        category: "",
         curriculum: [""]
         ,
         studentscount: "",
@@ -256,7 +250,7 @@ export default function AdminHomePage() {
                 >
                     <span className="mr-2 text-xl">Create Course</span>
                 </button>
-                {ShowForm ? (<CreateOrEditCourse id={''} price={''} title={''} description={''} curriculum={[]} studentscount={''} lecturescount={''} hourscount={''} Language={''} tempcount={''} Complition={[]} />) : (<></>)}
+                {ShowForm ? (<CreateOrEditCourse id={''} category={""} price={''} title={''} description={''} curriculum={[]} studentscount={''} lecturescount={''} hourscount={''} Language={''} tempcount={''} Complition={[]} />) : (<></>)}
                 {ShoweditForm ? (<CreateOrEditCourse {...editCourse} />) : (<></>)}
 
             </main >

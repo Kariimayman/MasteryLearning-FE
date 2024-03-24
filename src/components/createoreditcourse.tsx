@@ -9,6 +9,9 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
         const formData = new FormData(event.currentTarget)
         const title = formData.get('title')
         const price = formData.get('price')
+        const pricebeforediscount = formData.get('pricebeforediscount')
+        const category = formData.get('category')
+
         const description = formData.get('description')
         const curriculum = formData.get('curriculum')?.toString().split('\n').map((line) => line.trim()) // Trim whitespace
             .filter((line) => line !== '')
@@ -21,6 +24,8 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
 
         console.log(title)
         console.log(price)
+        console.log(pricebeforediscount)
+        console.log(category)
         console.log(description)
         console.log(curriculum)
         console.log(studentscount)
@@ -41,7 +46,7 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
             <form onSubmit={handleSubmit} className="flex flex-col items-center w-full rounded-lg shadow-2xl p-10 ">
                 <div className='grid grid-cols-2  w-full'>
                     <div className='flex flex-col items-center w-full'>
-                        <label className="text-black py-2 w-3/4 font-sans">title</label>
+                        <label className="text-black py-2 w-3/4 font-sans">Title</label>
                         <input
                             defaultValue={editCourse?.title}
                             type="text"
@@ -52,7 +57,18 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
                         />
                     </div >
                     <div className='flex flex-col items-center w-full'>
-                        <label className="text-black py-2 w-3/4  font-sans">price</label>
+                        <label className="text-black py-2 w-3/4  font-sans">Category</label>
+                        <input
+                            defaultValue={editCourse?.category}
+                            type="text"
+                            name="category"
+                            placeholder="category"
+                            required
+                            className="mb-4 w-3/4 text-black rounded-md border border-gray-300 px-2 py-2 text-left text-sm"
+                        />
+                    </div>
+                    <div className='flex flex-col items-center w-full'>
+                        <label className="text-black py-2 w-3/4  font-sans">Price</label>
                         <input
                             defaultValue={editCourse?.price}
                             type="text"
@@ -63,7 +79,18 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
                         />
                     </div>
                     <div className='flex flex-col items-center w-full'>
-                        <label className="text-black py-2 w-3/4  font-sans">students count </label>
+                        <label className="text-black py-2 w-3/4  font-sans">Price Before Discount</label>
+                        <input
+                            defaultValue={editCourse?.price}
+                            type="text"
+                            name="pricebeforediscount"
+                            placeholder="price before discount"
+                            required
+                            className="mb-4 w-3/4 text-black rounded-md border border-gray-300 px-2 py-2 text-left text-sm"
+                        />
+                    </div>
+                    <div className='flex flex-col items-center w-full'>
+                        <label className="text-black py-2 w-3/4  font-sans">Students Count </label>
                         <input
                             defaultValue={editCourse?.studentscount}
 
@@ -75,7 +102,7 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
                         />
                     </div>
                     <div className='flex flex-col items-center w-full'>
-                        <label className="text-black py-2 w-3/4  font-sans"> lectures count   </label>
+                        <label className="text-black py-2 w-3/4  font-sans"> Lectures Count   </label>
                         <input
                             defaultValue={editCourse?.lecturescount}
                             type="text"
@@ -86,7 +113,7 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
                         />
                     </div>
                     <div className='flex flex-col items-center w-full'>
-                        <label className="text-black py-2 w-3/4 font-sans">hours count</label>
+                        <label className="text-black py-2 w-3/4 font-sans">Hours Count</label>
                         <input
                             defaultValue={editCourse?.hourscount}
                             type="text"
@@ -99,7 +126,7 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
 
                     <div className='flex flex-col items-center w-full'>
 
-                        <label className="text-black py-2 w-3/4 font-sans">temp count</label>
+                        <label className="text-black py-2 w-3/4 font-sans">Temp Count</label>
                         <input
                             defaultValue={editCourse?.tempcount}
                             type="text"
@@ -112,7 +139,7 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
 
                 </div>
                 <div className='flex flex-col items-center w-full'>
-                    <label className="text-black py-2 w-3/4  font-sans"> description  </label>
+                    <label className="text-black py-2 w-3/4  font-sans"> Description  </label>
                     <textarea
                         defaultValue={editCourse?.description}
                         name="description"
@@ -122,7 +149,7 @@ export default function CreateOrEditCourse(course: Course = {} as Course) {
                     />
                 </div>
                 <div className='flex flex-col items-center w-full'>
-                    <label className="text-black py-2 w-3/4  font-sans">  curriculum </label>
+                    <label className="text-black py-2 w-3/4  font-sans">  Curriculum </label>
                     <textarea
                         defaultValue={editCourse?.curriculum?.map((item) => item + "\n\n").join('')}
                         name="curriculum"
